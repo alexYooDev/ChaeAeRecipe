@@ -25,7 +25,7 @@ services:
       - '80:80'
       - '443:443'
     container_name: final_nginx_deploy
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 
   certbot:
     depends_on:
@@ -37,7 +37,6 @@ services:
       - ./certbot/logs:/var/log/letsencrypt
       - ./certbot/www:/var/www/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
 
   server:
     image: jink0608/final_flask
@@ -55,7 +54,7 @@ services:
 
   mysql:
     # m1침의 경우 아래 코드 주석을 해제하고 docker-compose를 실행해주세요
-    platform: linux/x86_64
+    platform: linux/amd64
     image: jink0608/final_mysql
 
     build: ./mysql
