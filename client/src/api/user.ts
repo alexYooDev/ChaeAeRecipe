@@ -1,9 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = 'https://chae-recipe.koreacentral.cloudapp.azure.com/api';
+
 export const checkDuplicateNickname = (nickname: string) => {
-  return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/user/check?nickname=${nickname}`
-  );
+  return axios.get(`${BASE_URL}/user/check?nickname=${nickname}`);
 };
 
 export const registerUserInfo = (userRegInfo: {
@@ -12,14 +12,11 @@ export const registerUserInfo = (userRegInfo: {
   password1: string;
   password2: string;
 }) => {
-  return axios.post(
-    `${process.env.REACT_APP_BASE_URL}/user/register`,
-    userRegInfo
-  );
+  return axios.post(`${BASE_URL}/user/register`, userRegInfo);
 };
 
 export const logUserIn = (userInfo: { email: string; password: string }) => {
-  return axios.post(`${process.env.REACT_APP_BASE_URL}/user/login`, userInfo);
+  return axios.post(`${BASE_URL}/user/login`, userInfo);
 };
 
 const KAKAO_REDIRECT_URI =
@@ -30,10 +27,9 @@ const REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY;
 export const kakaoRequestUrl = `${HOST}/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
 
 export const sendKakaoAuthCode = (authCode: string | null) => {
-  return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/user/callback/kakao?code=${authCode}`,
-    { withCredentials: true }
-  );
+  return axios.get(`${BASE_URL}/user/callback/kakao?code=${authCode}`, {
+    withCredentials: true,
+  });
 };
 
 const GOOGLE_REDIRECT_URI =
@@ -44,7 +40,5 @@ const SCOPE = 'openid%20profile%20email';
 export const googleRequestUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&scope=${SCOPE}&response_type=code`;
 
 export const sendGoogleAuthCode = (authCode: string | null) => {
-  return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/user/callback/google?code=${authCode}`
-  );
+  return axios.get(`${BASE_URL}/user/callback/google?code=${authCode}`);
 };

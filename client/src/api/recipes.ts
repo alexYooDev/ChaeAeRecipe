@@ -2,17 +2,14 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 /* 개발용 url */
-// const BASE_URL = 'http://localhost:3000/api';
+const BASE_URL = 'https://chae-recipe.koreacentral.cloudapp.azure.com/api';
 
 export const sendIngredientPhoto = (formData: FormData) => {
-  return axios.post(`${process.env.REACT_APP_BASE_URL}/`, formData);
+  return axios.post(`${BASE_URL}/`, formData);
 };
 
 export const fetchIngredientsFromImage = (formData: FormData) => {
-  return axios.post(
-    `${process.env.REACT_APP_BASE_URL}/ingredients/image/search`,
-    formData
-  );
+  return axios.post(`${BASE_URL}/ingredients/image/search`, formData);
 };
 
 export const fetchWordSearchResult = (
@@ -20,7 +17,7 @@ export const fetchWordSearchResult = (
   pageParams: number = 1
 ) => {
   return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/recipes/word-search?ing=${query}&page=${pageParams}`
+    `${BASE_URL}/recipes/word-search?ing=${query}&page=${pageParams}`
   );
 };
 
@@ -29,12 +26,12 @@ export const fetchImageSearchResult = (
   pageParams: number = 1
 ) => {
   return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/recipes/image-search?ing=${query}&page=${pageParams}`
+    `${BASE_URL}/recipes/image-search?ing=${query}&page=${pageParams}`
   );
 };
 
 export const fetchDetailInfo = (params: string | undefined) => {
-  return axios.get(`${process.env.REACT_APP_BASE_URL}/recipes/${params}`);
+  return axios.get(`${BASE_URL}/recipes/${params}`);
 };
 
 export const registerRecipe = (formData: FormData) => {
@@ -44,10 +41,7 @@ export const registerRecipe = (formData: FormData) => {
       Authorization: `Bearer ${cookie}`,
     },
   });
-  return header.post(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/register`,
-    formData
-  );
+  return header.post(`${BASE_URL}/recipe-board/register`, formData);
 };
 
 export const deleteRecipe = (params: string | undefined) => {
@@ -58,9 +52,7 @@ export const deleteRecipe = (params: string | undefined) => {
     },
   });
 
-  return header.delete(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/delete/${params}`
-  );
+  return header.delete(`${BASE_URL}/recipe-board/delete/${params}`);
 };
 
 export const updateRecipe = (params: string | undefined) => {
@@ -70,9 +62,7 @@ export const updateRecipe = (params: string | undefined) => {
       Authorization: `Bearer ${cookie}`,
     },
   });
-  return header.get(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/update/${params}`
-  );
+  return header.get(`${BASE_URL}/recipe-board/update/${params}`);
 };
 
 export const sendUpdatedRecipe = (
@@ -85,8 +75,5 @@ export const sendUpdatedRecipe = (
       Authorization: `Bearer ${cookie}`,
     },
   });
-  return header.post(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/update/${params}`,
-    formData
-  );
+  return header.post(`${BASE_URL}/recipe-board/update/${params}`, formData);
 };
