@@ -35,14 +35,14 @@ false_response = login_page_api.model('Response_false', {
 @login_page_api.route('/check')
 class Check(Resource):
   def get(self):
-    try:
+    # try:
       nickname = request.args.get('nickname')
       exe_user = Users.query.filter(Users.nickname==nickname).first()
       if exe_user:
         return jsonify({'success': False, 'message': '이미 존재하는 닉네임입니다.'})
       return jsonify({'success': True, 'message': '사용 가능한 닉네임입니다.'})
-    except Exception as e:
-      return jsonify({'success': False, 'message': '서버 내부 에러'})
+    # except Exception as e:
+      # return jsonify({'success': False, 'message': '서버 내부 에러'})
 
 
 # 회원가입 라우터
