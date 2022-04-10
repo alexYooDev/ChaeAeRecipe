@@ -5,12 +5,15 @@ import Cookies from 'universal-cookie';
 // const BASE_URL = 'http://localhost:3000/api';
 
 export const sendIngredientPhoto = (formData: FormData) => {
-  return axios.post(`${process.env.REACT_APP_BASE_URL}/`, formData);
+  return axios.post(
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api`,
+    formData
+  );
 };
 
 export const fetchIngredientsFromImage = (formData: FormData) => {
   return axios.post(
-    `${process.env.REACT_APP_BASE_URL}/ingredients/image/search`,
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/ingredients/image/search`,
     formData
   );
 };
@@ -20,7 +23,7 @@ export const fetchWordSearchResult = (
   pageParams: number = 1
 ) => {
   return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/recipes/word-search?ing=${query}&page=${pageParams}`
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipes/word-search?ing=${query}&page=${pageParams}`
   );
 };
 
@@ -29,12 +32,14 @@ export const fetchImageSearchResult = (
   pageParams: number = 1
 ) => {
   return axios.get(
-    `${process.env.REACT_APP_BASE_URL}/recipes/image-search?ing=${query}&page=${pageParams}`
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipes/image-search?ing=${query}&page=${pageParams}`
   );
 };
 
 export const fetchDetailInfo = (params: string | undefined) => {
-  return axios.get(`${process.env.REACT_APP_BASE_URL}/recipes/${params}`);
+  return axios.get(
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipes/${params}`
+  );
 };
 
 export const registerRecipe = (formData: FormData) => {
@@ -45,7 +50,7 @@ export const registerRecipe = (formData: FormData) => {
     },
   });
   return header.post(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/register`,
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipe-board/register`,
     formData
   );
 };
@@ -59,7 +64,7 @@ export const deleteRecipe = (params: string | undefined) => {
   });
 
   return header.delete(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/delete/${params}`
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipe-board/delete/${params}`
   );
 };
 
@@ -71,7 +76,7 @@ export const updateRecipe = (params: string | undefined) => {
     },
   });
   return header.get(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/update/${params}`
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipe-board/update/${params}`
   );
 };
 
@@ -86,7 +91,7 @@ export const sendUpdatedRecipe = (
     },
   });
   return header.post(
-    `${process.env.REACT_APP_BASE_URL}/recipe-board/update/${params}`,
+    `https://chae-recipe.koreacentral.cloudapp.azure.com/api/recipe-board/update/${params}`,
     formData
   );
 };
