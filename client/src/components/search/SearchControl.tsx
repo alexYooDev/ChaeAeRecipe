@@ -1,9 +1,11 @@
-import styled from 'styled-components';
-import Category from './Category';
-import SearchForm from './SearchForm';
 import React, { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
+import styled from 'styled-components';
+
 import { filterState, recipesState } from '../../store/store';
+
+import Category from './Category';
+import SearchForm from './SearchForm';
 import WordSearchRecipeList from '../recipes/list/WordSearchRecipeList';
 import ImageSearchRecipeList from '../recipes/list/ImageSearchRecipeList';
 

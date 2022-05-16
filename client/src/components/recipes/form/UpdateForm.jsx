@@ -74,7 +74,7 @@ const UpdateForm = () => {
   const handleChangeRecipeTitle = useCallback(
     (e) => {
       const title = e.target.value.trim();
-      setNewRecipe({ ...newRecipe, ['recipe_name']: title });
+      setNewRecipe({ ...newRecipe, recipe_name: title });
     },
     [newRecipe]
   );
@@ -142,17 +142,17 @@ const UpdateForm = () => {
     e.preventDefault();
     setNewRecipe({
       ...newRecipe,
-      ['cooking_step']: totalCookingStep,
-      ['total_ingredients']: JSON.stringify({
+      cooking_step: totalCookingStep,
+      total_ingredients: JSON.stringify({
         재료: totalIngredient,
         양념: totalSeasoning,
       }),
-      ['kind']: option.kind,
-      ['method']: option.method,
-      ['occation']: option.occ,
-      ['serving']: option.serving,
-      ['time']: option.time,
-      ['step_count']:
+      kind: option.kind,
+      method: option.method,
+      occation: option.occ,
+      serving: option.serving,
+      time: option.time,
+      step_count:
         newRecipe.cooking_step === '' || imageContent.files.length <= 1
           ? 0
           : stepNum.length,
@@ -165,18 +165,18 @@ const UpdateForm = () => {
   useEffect(() => {
     setOption({
       ...option,
-      ['kind']: updateData.kind,
-      ['serving']: updateData.serving,
-      ['time']: updateData.time,
-      ['method']: updateData.method,
-      ['occ']: updateData.occation,
+      kind: updateData.kind,
+      serving: updateData.serving,
+      time: updateData.time,
+      method: updateData.method,
+      occ: updateData.occation,
     });
     setStepNum(updateData.step_number);
     setCookingStep(updateStep);
     setNewRecipe({
       ...newRecipe,
-      ['recipe_name']: updateData.recipe_name,
-      ['step_count']:
+      recipe_name: updateData.recipe_name,
+      step_count:
         updateData.cooking_step === '' ? 0 : updateData.step_number.length,
     });
     setIngredientList(updateData.ingredients);

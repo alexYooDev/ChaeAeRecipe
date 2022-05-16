@@ -66,7 +66,7 @@ const RecipeForm = () => {
   const handleChangeRecipeTitle = useCallback(
     (e) => {
       const title = e.target.value.trim();
-      setNewRecipe({ ...newRecipe, ['recipe_name']: title });
+      setNewRecipe({ ...newRecipe, recipe_name: title });
     },
     [newRecipe]
   );
@@ -111,17 +111,17 @@ const RecipeForm = () => {
     e.preventDefault();
     setNewRecipe({
       ...newRecipe,
-      ['cooking_step']: totalCookingStep,
-      ['total_ingredients']: JSON.stringify({
+      cooking_step: totalCookingStep,
+      total_ingredients: JSON.stringify({
         재료: totalIngredient,
         양념: totalSeasoning,
       }),
-      ['kind']: option.kind,
-      ['method']: option.method,
-      ['occation']: option.occ,
-      ['serving']: option.serving,
-      ['time']: option.time,
-      ['step_count']:
+      kind: option.kind,
+      method: option.method,
+      occation: option.occ,
+      serving: option.serving,
+      time: option.time,
+      step_count:
         newRecipe.cooking_step === '' || imageContent.files.length <= 1
           ? 0
           : stepNum.length,

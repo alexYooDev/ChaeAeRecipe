@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Icon from './Icon';
 import { filterState } from '../../store/store';
 import { useRecoilState } from 'recoil';
-import { kindMapper } from '../../assets/data/kindMapper';
 
 type DataType = {
   id: string;
@@ -22,7 +21,7 @@ const IconOption: React.FC<Props> = ({ data, className }) => {
   const handleFilter = (value: string) => {
     setFilter({
       ...filter,
-      ['kind']: value,
+      kind: value,
     });
   };
 
