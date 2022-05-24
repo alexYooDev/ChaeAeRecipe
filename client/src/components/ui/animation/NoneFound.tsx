@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import styled from 'styled-components';
 import Lottie from 'lottie-web';
+
 import empty from '../../../assets/lotties/empty.json';
 import { LottieStyle } from '../../../styles/LottieStyle';
-import styled from 'styled-components';
 
 const NoneFound: React.FC = ({ children }) => {
   const AnimationRef = useRef<HTMLDivElement>(null as any);

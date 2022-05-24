@@ -1,8 +1,9 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+
 import Icon from './Icon';
 import { filterState } from '../../store/store';
-import { useRecoilState } from 'recoil';
 
 type DataType = {
   id: string;

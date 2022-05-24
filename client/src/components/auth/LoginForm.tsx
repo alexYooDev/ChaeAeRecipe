@@ -1,19 +1,20 @@
 import React, { ChangeEvent, FormEventHandler, useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { useQuery } from 'react-query';
+import styled from 'styled-components';
+import { Link, Navigate } from 'react-router-dom';
+import LottieLoader from 'react-lottie-loader';
+import Cookies from 'universal-cookie';
+
 import Card from '../ui/Card';
 import Input from '../ui/input/Input';
 import Button from '../ui/button/Button';
-import styled from 'styled-components';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { LoggedInUser, authState } from '../../store/store';
-import { Link, Navigate } from 'react-router-dom';
-import LottieLoader from 'react-lottie-loader';
+import { authState } from '../../store/store';
 import LoadingSpinner from '../../assets/lotties/walking-broccoli.json';
-import { useQuery } from 'react-query';
 import { logUserIn } from '../../api/user';
 import { HighLight } from '../text/Highlight';
 import GoogleButton from '../ui/button/GoogleButton';
 import KakaoButton from '../ui/button/KakaoButton';
-import Cookies from 'universal-cookie';
 
 const LoginForm: React.FC = () => {
   const [userPW, setUserPW] = useState('');

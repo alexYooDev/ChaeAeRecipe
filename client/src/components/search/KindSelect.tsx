@@ -1,11 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-
-import IconOption from '../../components/category/IconOption';
-import Button from '../ui/button/Button';
+import { useNavigate } from 'react-router-dom';
 
 import { KIND_DATA } from '../../assets/data/categoryData';
+
+import IconOption from '../../components/category/IconOption';
+
+import Button from '../ui/button/Button';
+
 import { animation } from '../../styles/animation';
 
 const KindSelect: React.FC = () => {

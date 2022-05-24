@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
 import Header from './Header';
 import NavLinks from './NavLinks';
 import HeaderLogo from './HeaderLogo';
 import BackDrop from '../ui/modal/BackDrop';
 import SideDrawer from './SideDrawer';
-import styled from 'styled-components';
 
 const Navigation: React.FC = () => {
   const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);

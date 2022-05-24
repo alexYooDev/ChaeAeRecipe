@@ -1,13 +1,15 @@
 import React from 'react';
-import LoadingSpinner from '../../components/ui/animation/LoadingSpinner';
-import { useQuery } from 'react-query';
-import { sendKakaoAuthCode } from '../../api/user';
-import { Navigate } from 'react-router-dom';
-import { PageLayout } from '../../components/layout/PageLayout';
-import Cookies from 'universal-cookie';
-import { authState } from '../../store/store';
 import { useSetRecoilState } from 'recoil';
+import { useQuery } from 'react-query';
+import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Cookies from 'universal-cookie';
+
+import LoadingSpinner from '../../components/ui/animation/LoadingSpinner';
+import { PageLayout } from '../../components/layout/PageLayout';
+
+import { sendKakaoAuthCode } from '../../api/user';
+import { authState } from '../../store/store';
 
 const KakaoRedirectPage: React.FC = () => {
   const cookie = new Cookies();

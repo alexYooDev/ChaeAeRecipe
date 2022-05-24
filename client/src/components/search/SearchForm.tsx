@@ -1,8 +1,10 @@
-import styled from 'styled-components';
-import Button from '../ui/button/Button';
-import SearchBar from '../../components/search/SearchBar';
 import React, { ChangeEventHandler, FormEventHandler, useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useQuery } from 'react-query';
+import styled from 'styled-components';
+
+import Button from '../ui/button/Button';
+import SearchBar from '../../components/search/SearchBar';
 import {
   currentPageState,
   recipesState,
@@ -10,7 +12,7 @@ import {
   recipeCountState,
   lastPageState,
 } from '../../store/store';
-import { useQuery } from 'react-query';
+
 import { fetchWordSearchResult } from '../../api/recipes';
 
 const SearchForm: React.FC = () => {

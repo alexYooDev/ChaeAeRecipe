@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
+
 import { KIND_DATA } from '../../assets/data/categoryData';
 import IconOption from '../category/IconOption';
 

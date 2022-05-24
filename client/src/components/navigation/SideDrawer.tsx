@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import ReactDOM from 'react-dom';
-import { CSSTransition } from 'react-transition-group';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
 
 type Props = {
   isShowing: boolean;

@@ -1,13 +1,16 @@
-import LoadingSpinner from '../../components/ui/animation/LoadingSpinner';
 import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { sendGoogleAuthCode } from '../../api/user';
-import { useQuery } from 'react-query';
-import { PageLayout } from '../../components/layout/PageLayout';
-import Cookies from 'universal-cookie';
-import { authState } from '../../store/store';
 import { useSetRecoilState } from 'recoil';
+import { useQuery } from 'react-query';
+import { Navigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
+import { sendGoogleAuthCode } from '../../api/user';
+import { authState } from '../../store/store';
+
 import Swal from 'sweetalert2';
+
+import { PageLayout } from '../../components/layout/PageLayout';
+import LoadingSpinner from '../../components/ui/animation/LoadingSpinner';
 
 const GoogleRedirectPage: React.FC = () => {
   const cookie = new Cookies();

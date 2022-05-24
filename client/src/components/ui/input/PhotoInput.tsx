@@ -1,9 +1,5 @@
-import React, {
-  MutableRefObject,
-  useRef,
-  ChangeEventHandler,
-  ChangeEvent,
-} from 'react';
+import React, { MutableRefObject, useRef, ChangeEventHandler } from 'react';
+
 import _ from 'lodash';
 import styled from 'styled-components';
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { authState } from '../../store/store';
 import { useRecoilState } from 'recoil';
 import Cookies from 'universal-cookie';
+
+import { authState } from '../../store/store';
 
 type Props = {
   className: string;

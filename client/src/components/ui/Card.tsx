@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+
 import { animation } from '../../styles/animation';
 
 type CardProps = {

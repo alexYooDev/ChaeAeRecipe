@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import { useState } from 'react';
+
 import Modal from '../ui/modal/Modal';
 import GuideInfo from './GuideInfo';
 

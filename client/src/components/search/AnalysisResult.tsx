@@ -3,20 +3,23 @@ import { useRecoilState } from 'recoil';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { ingredientsState } from '../../store/store';
-import { fetchIngredientsFromImage } from '../../api/recipes';
-import { formData } from './ImageSearchUploader';
 
 import LoadingSpinner from '../ui/animation/LoadingSpinner';
+import Button from '../ui/button/Button';
 import Modal from '../ui/modal/Modal';
 import Input from '../ui/input/Input';
-import Button from '../ui/button/Button';
 import NoneFound from '../ui/animation/NoneFound';
-import { HighLight } from '../text/Highlight';
-import { animation } from '../../styles/animation';
 
 import IngredientCardList from '../recipes/ingredients/IngredientCardList';
 import AdditionalIngredients from '../recipes/ingredients/AdditionalIngredients';
+
+import { animation } from '../../styles/animation';
+import { HighLight } from '../text/Highlight';
+
+import { ingredientsState } from '../../store/store';
+import { fetchIngredientsFromImage } from '../../api/recipes';
+
+import { formData } from './ImageSearchUploader';
 
 const AnalysisResult: React.FC = () => {
   const navigate = useNavigate();
