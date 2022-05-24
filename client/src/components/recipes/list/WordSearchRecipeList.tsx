@@ -1,9 +1,11 @@
-import styled, { css } from 'styled-components';
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRecoilState, useResetRecoilState, useRecoilValue } from 'recoil';
+import { useQuery } from 'react-query';
+import styled, { css } from 'styled-components';
+
 import { RecipesLayout } from '../../layout/RecipesLayout';
 import { HighLight } from '../../text/Highlight';
-import LoadingSpinner from '../../ui/animation/LoadingSpinner';
-import { useRecoilState, useResetRecoilState, useRecoilValue } from 'recoil';
+
 import {
   filterState,
   currentPageState,
@@ -11,16 +13,18 @@ import {
   recipesState,
   lastPageState,
 } from '../../../store/store';
-import NoneFound from '../../ui/animation/NoneFound';
-import { useQuery } from 'react-query';
-import RecipeCard from './RecipeCard';
 import { ingredientsState } from '../../../store/store';
-import { fetchWordSearchResult } from '../../../api/recipes';
+
+import NoneFound from '../../ui/animation/NoneFound';
+import LoadingSpinner from '../../ui/animation/LoadingSpinner';
 import {
   SpinnerContainer,
   SpinnerOverlay,
 } from '../../ui/animation/LoadingSpinnerSmall';
 import ScrollTopButton from '../../ui/button/ScrollTopButton';
+
+import RecipeCard from './RecipeCard';
+import { fetchWordSearchResult } from '../../../api/recipes';
 
 const WordSearchRecipeList: React.FC = () => {
   const [target, setTarget] = useState<HTMLDivElement | null>();

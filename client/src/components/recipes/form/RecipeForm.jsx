@@ -1,5 +1,10 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Input from '../../ui/input/Input';
+import { useQuery } from 'react-query';
+import { Navigate } from 'react-router-dom';
+import { useRecoilState, useResetRecoilState } from 'recoil';
+import styled from 'styled-components';
+
 import {
   METHOD_DATA,
   OCC_DATA,
@@ -7,19 +12,19 @@ import {
   SERVINGS_DATA,
   TIME_DATA,
 } from '../../../assets/data/categoryData';
+
 import IngredientList from '../ingredients/IngredientTagList';
-import styled from 'styled-components';
-import PhotoInput from '../../ui/input/PhotoInput';
 import RecipeSteps from './RecipeSteps';
+
+import PhotoInput from '../../ui/input/PhotoInput';
 import Button from '../../ui/button/Button';
-import CategoryOption from '../../category/CategoryOption';
-import { registerRecipe } from '../../../api/recipes';
-import { useQuery } from 'react-query';
 import Modal from '../../ui/modal/Modal';
-import { Navigate } from 'react-router-dom';
 import LoadingSpinner from '../../ui/animation/LoadingSpinner';
+
+import CategoryOption from '../../category/CategoryOption';
 import IconOption from '../../category/IconOption';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+
+import { registerRecipe } from '../../../api/recipes';
 import { filterState } from '../../../store/store';
 
 const RecipeForm = () => {

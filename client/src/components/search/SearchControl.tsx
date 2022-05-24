@@ -1,11 +1,13 @@
-import styled from 'styled-components';
-import Category from './Category';
-import SearchForm from './SearchForm';
 import React, { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
-import { filterState, recipesState } from '../../store/store';
+import styled from 'styled-components';
+
 import WordSearchRecipeList from '../recipes/list/WordSearchRecipeList';
 import ImageSearchRecipeList from '../recipes/list/ImageSearchRecipeList';
+
+import Category from './Category';
+import SearchForm from './SearchForm';
+import { filterState, recipesState } from '../../store/store';
 
 type Props = {
   mode: string;

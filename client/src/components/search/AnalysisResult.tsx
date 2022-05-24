@@ -1,20 +1,25 @@
 import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
-import { ingredientsState } from '../../store/store';
 import { useRecoilState } from 'recoil';
-import Button from '../ui/button/Button';
+import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { useQuery } from 'react-query';
-import { fetchIngredientsFromImage } from '../../api/recipes';
-import { formData } from './ImageSearchUploader';
+
 import LoadingSpinner from '../ui/animation/LoadingSpinner';
+import Button from '../ui/button/Button';
 import Modal from '../ui/modal/Modal';
 import Input from '../ui/input/Input';
+import NoneFound from '../ui/animation/NoneFound';
+
 import IngredientCardList from '../recipes/ingredients/IngredientCardList';
 import AdditionalIngredients from '../recipes/ingredients/AdditionalIngredients';
-import { HighLight } from '../text/Highlight';
+
 import { animation } from '../../styles/animation';
-import NoneFound from '../ui/animation/NoneFound';
+import { HighLight } from '../text/Highlight';
+
+import { ingredientsState } from '../../store/store';
+import { fetchIngredientsFromImage } from '../../api/recipes';
+
+import { formData } from './ImageSearchUploader';
 
 const AnalysisResult: React.FC = () => {
   const navigate = useNavigate();

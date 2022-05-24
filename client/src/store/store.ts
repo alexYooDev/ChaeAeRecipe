@@ -1,6 +1,4 @@
-import axios from 'axios';
-import { atom, selector } from 'recoil';
-import { formData } from '../components/search/ImageSearchUploader';
+import { atom } from 'recoil';
 
 export const LoggedInUser = atom({
   key: 'userNickname',

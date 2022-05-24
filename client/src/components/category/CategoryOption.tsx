@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler } from 'react';
-import CategoryTag from './CatergoryTag';
 import styled from 'styled-components';
+
+import CategoryTag from './CatergoryTag';
 
 type DataType = {
   cat: string;

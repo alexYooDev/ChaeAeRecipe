@@ -5,15 +5,16 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import styled from 'styled-components';
+import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 import Card from '../ui/Card';
 import Input from '../ui/input/Input';
 import Button from '../ui/button/Button';
-import { useNavigate } from 'react-router-dom';
 import { checkDuplicateNickname, registerUserInfo } from '../../api/user';
-import { useQuery } from 'react-query';
 import useRegisterInput from '../../hooks/useRegisterInput';
-import styled from 'styled-components';
-import Swal from 'sweetalert2';
 
 const RegisterForm: React.FC = () => {
   const nicknameCheck = /^[a-zA-Z0-9]{4,12}$/;

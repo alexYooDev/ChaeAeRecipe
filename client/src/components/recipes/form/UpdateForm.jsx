@@ -1,4 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useQuery } from 'react-query';
+import { useRecoilState, useResetRecoilState } from 'recoil';
+import { Navigate } from 'react-router-dom';
+
 import Input from '../../ui/input/Input';
 import {
   METHOD_DATA,
@@ -8,20 +13,18 @@ import {
   TIME_DATA,
 } from '../../../assets/data/categoryData';
 import IngredientList from '../ingredients/IngredientTagList';
-import styled from 'styled-components';
-import PhotoInput from '../../ui/input/PhotoInput';
 import RecipeSteps from './RecipeSteps';
+
+import PhotoInput from '../../ui/input/PhotoInput';
 import Button from '../../ui/button/Button';
-import CategoryOption from '../../category/CategoryOption';
-import { sendUpdatedRecipe } from '../../../api/recipes';
-import { useQuery } from 'react-query';
-import Modal from '../../ui/modal/Modal';
-import { Navigate } from 'react-router-dom';
 import LoadingSpinner from '../../ui/animation/LoadingSpinner';
+import Modal from '../../ui/modal/Modal';
+
+import CategoryOption from '../../category/CategoryOption';
 import IconOption from '../../category/IconOption';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+
+import { sendUpdatedRecipe } from '../../../api/recipes';
 import { filterState, updateDataState } from '../../../store/store';
-import Swal from 'sweetalert2';
 
 const UpdateForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
