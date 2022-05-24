@@ -1,8 +1,17 @@
 import PhotoInput from '../../ui/input/PhotoInput';
 import RecipeStepInput from './RecipeStepInput';
 import styled from 'styled-components';
+import React, { Dispatch } from 'react';
 
-const CookingStep = ({
+type Props = {
+  stepNum: [];
+  setStepNum: Dispatch<React.SetStateAction<never[] | any>>;
+  cookingStep: [];
+  setCookingStep: Dispatch<React.SetStateAction<never[] | any>>;
+  imageContent: { files: any; url: any };
+  onChangeImg: any;
+};
+const CookingStep: React.FC<Props> = ({
   stepNum,
   setStepNum,
   cookingStep,
@@ -12,7 +21,7 @@ const CookingStep = ({
 }) => {
   return (
     <StepContainer>
-      {stepNum.map((idx) => (
+      {stepNum.map((idx: number) => (
         <div key={idx}>
           <h3>조리 단계 {Number(Object.keys(stepNum).splice(idx, 1)) + 1}</h3>
           <RecipeStepInput
@@ -27,7 +36,7 @@ const CookingStep = ({
           >
             <PhotoInput
               id={`step${idx + 1}`}
-              images={imageContent}
+              imageContent={imageContent}
               onChangeImg={onChangeImg}
               placeholder='단계별 사진을 업로드 해주세요.'
             />

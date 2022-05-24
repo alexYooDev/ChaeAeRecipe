@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React, { Dispatch } from 'react';
 
 import {
   METHOD_DATA,
@@ -9,7 +10,19 @@ import {
 
 import CategoryOption from '../../category/CategoryOption';
 
-const CategoryInput = ({ onChangeOption, option }) => {
+type DataType = {
+  serving: string;
+  time: string;
+  method: string;
+  occ: string;
+};
+
+type Props = {
+  onChangeOption: Dispatch<React.SetStateAction<never[] | any>>;
+  option: DataType;
+};
+
+const CategoryInput: React.FC<Props> = ({ onChangeOption, option }) => {
   return (
     <CategoryOptionContainer>
       <CategoryOption

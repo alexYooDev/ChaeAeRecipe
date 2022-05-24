@@ -1,28 +1,12 @@
 import { useCallback, useState } from 'react';
-import Input from '../../ui/input/Input';
+import styled from 'styled-components';
 import { useQuery } from 'react-query';
 import { Navigate } from 'react-router-dom';
 import { useRecoilState, useResetRecoilState } from 'recoil';
-import styled from 'styled-components';
 
-import {
-  METHOD_DATA,
-  OCC_DATA,
-  KIND_DATA,
-  SERVINGS_DATA,
-  TIME_DATA,
-} from '../../../assets/data/categoryData';
-
-import IngredientList from '../ingredients/IngredientTagList';
-import RecipeSteps from './RecipeStepInput';
-
-import PhotoInput from '../../ui/input/PhotoInput';
 import Button from '../../ui/button/Button';
 import Modal from '../../ui/modal/Modal';
 import LoadingSpinner from '../../ui/animation/LoadingSpinner';
-
-import CategoryOption from '../../category/CategoryOption';
-import IconOption from '../../category/IconOption';
 
 import { registerRecipe } from '../../../api/recipes';
 import { filterState } from '../../../store/store';

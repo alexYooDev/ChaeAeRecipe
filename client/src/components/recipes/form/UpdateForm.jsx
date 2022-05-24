@@ -139,13 +139,14 @@ const UpdateForm = () => {
     });
 
     setIsModalOpen(true);
+
     setMessage('레시피 작성을 완료하셨나요?');
   };
 
   const isCookingStepAdded =
     updateData.cooking_step === '' ? 0 : updateData.step_number.length;
 
-  useEffect(() => {
+  const handleSetPreviousInput = () => {
     setOption({
       ...option,
       kind: updateData.kind,
@@ -163,6 +164,10 @@ const UpdateForm = () => {
     });
     setIngredientList(updateData.ingredients);
     setSeasoningList(updateData.sauce);
+  };
+
+  useEffect(() => {
+    handleSetPreviousInput();
   }, []);
 
   if (isLoading) {
