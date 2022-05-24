@@ -22,7 +22,7 @@ const IconOption: React.FC<Props> = ({ data, className }) => {
   const handleFilter = (value: string) => {
     setFilter({
       ...filter,
-      ['kind']: value,
+      kind: value,
     });
   };
 

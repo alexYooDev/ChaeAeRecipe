@@ -14,7 +14,7 @@ import {
 } from '../../../assets/data/categoryData';
 
 import IngredientList from '../ingredients/IngredientTagList';
-import RecipeSteps from './RecipeSteps';
+import RecipeSteps from './RecipeStepInput';
 
 import PhotoInput from '../../ui/input/PhotoInput';
 import Button from '../../ui/button/Button';
@@ -26,6 +26,9 @@ import IconOption from '../../category/IconOption';
 
 import { registerRecipe } from '../../../api/recipes';
 import { filterState } from '../../../store/store';
+import CookingStep from './CookingStep';
+import CategoryInput from './CategoryInput';
+import IngredientInput from './IngredientInput';
 
 const RecipeForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,7 +74,7 @@ const RecipeForm = () => {
   const handleChangeRecipeTitle = useCallback(
     (e) => {
       const title = e.target.value.trim();
-      setNewRecipe({ ...newRecipe, ['recipe_name']: title });
+      setNewRecipe({ ...newRecipe, recipe_name: title });
     },
     [newRecipe]
   );
@@ -88,6 +91,15 @@ const RecipeForm = () => {
     },
     [option]
   );
+
+  const handleSumbitRecipe = () => {
+    formData.append('data', JSON.stringify(newRecipe));
+    Object.entries(imageContent.files).forEach((item) =>
+      formData.append(item[0], item[1])
+    );
+    setIsModalOpen(false);
+    registerNewRecipe();
+  };
 
   /* 레시피 작성 취소 */
   const handleCancelSubmit = () => {
@@ -112,37 +124,30 @@ const RecipeForm = () => {
     ]);
   };
 
+  const isCookingStepAdded =
+    newRecipe.cooking_step === '' || imageContent.files.length <= 1
+      ? 0
+      : stepNum.length;
+
   const handleCompleteRecipe = (e) => {
     e.preventDefault();
     setNewRecipe({
       ...newRecipe,
-      ['cooking_step']: totalCookingStep,
-      ['total_ingredients']: JSON.stringify({
+      cooking_step: totalCookingStep,
+      total_ingredients: JSON.stringify({
         재료: totalIngredient,
         양념: totalSeasoning,
       }),
-      ['kind']: option.kind,
-      ['method']: option.method,
-      ['occation']: option.occ,
-      ['serving']: option.serving,
-      ['time']: option.time,
-      ['step_count']:
-        newRecipe.cooking_step === '' || imageContent.files.length <= 1
-          ? 0
-          : stepNum.length,
+      kind: option.kind,
+      method: option.method,
+      occation: option.occ,
+      serving: option.serving,
+      time: option.time,
+      step_count: isCookingStepAdded,
     });
 
     setIsModalOpen(true);
     setMessage('레시피 작성을 완료하셨나요?');
-  };
-
-  const handleSumbitRecipe = () => {
-    formData.append('data', JSON.stringify(newRecipe));
-    Object.entries(imageContent.files).forEach((item) =>
-      formData.append(item[0], item[1])
-    );
-    setIsModalOpen(false);
-    registerNewRecipe();
   };
 
   if (isLoading) {
@@ -169,94 +174,28 @@ const RecipeForm = () => {
           <hr />
         </RecipeFormHeader>
         <MainOptionContainer>
-          <Input
-            type='text'
-            className='title'
-            placeholder='제목을 입력해주세요'
-            onChange={handleChangeRecipeTitle}
-          />
-          <PhotoInput
-            id='main_image'
-            className='main-image'
-            images={imageContent}
+          <MainOptionContainer
+            onChangeTitle={handleChangeRecipeTitle}
+            value={newRecipe.recipe_name}
             onChangeImg={setImageContent}
-            placeholder='메인사진을 업로드 해주세요.'
+            imageContent={imageContent}
           />
-          <p>요리 종류</p>
-          <IconOption data={KIND_DATA} />
-          <CategoryOptionContainer>
-            <CategoryOption
-              data={SERVINGS_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.serving}
-            >
-              인분:
-            </CategoryOption>
-            <CategoryOption
-              data={TIME_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.time}
-            >
-              시간:
-            </CategoryOption>
-            <CategoryOption
-              data={METHOD_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.method}
-            >
-              방법:
-            </CategoryOption>
-            <CategoryOption
-              data={OCC_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.occ}
-            >
-              상황:
-            </CategoryOption>
-          </CategoryOptionContainer>
+          <CategoryInput onChangeOption={handleChangeOption} option={option} />
         </MainOptionContainer>
-        <p>사용 재료</p>
-        <IngredientContainer>
-          <IngredientList
-            text='사용 재료'
-            list={ingredientList}
-            onChangeList={setIngredientList}
-          />
-        </IngredientContainer>
-        <p>사용 양념</p>
-        <IngredientContainer>
-          <IngredientList
-            text='사용 양념'
-            list={seasoningList}
-            onChangeList={setSeasoningList}
-          />
-        </IngredientContainer>
-        <StepContainer>
-          {stepNum.map((idx) => (
-            <div key={idx}>
-              <h3>
-                조리 단계 {Number(Object.keys(stepNum).splice(idx, 1)) + 1}
-              </h3>
-              <RecipeSteps
-                key={idx}
-                id={idx.toString()}
-                cookingStep={cookingStep}
-                onChangeStep={setCookingStep}
-                stepNum={stepNum}
-                onChangeNum={setStepNum}
-                imgContent={imageContent}
-                onChangeImg={setImageContent}
-              >
-                <PhotoInput
-                  id={`step${idx + 1}`}
-                  images={imageContent}
-                  onChangeImg={setImageContent}
-                  placeholder='단계별 사진을 업로드 해주세요.'
-                />
-              </RecipeSteps>
-            </div>
-          ))}
-        </StepContainer>
+        <IngredientInput
+          ingredientList={ingredientList}
+          seasoningList={seasoningList}
+          onChangeIngredient={setIngredientList}
+          onChangeSeansoning={setSeasoningList}
+        />
+        <CookingStep
+          stepNum={stepNum}
+          setStepNum={setStepNum}
+          cookingStep={cookingStep}
+          setCookingStep={setCookingStep}
+          imageContent={imageContent}
+          onChangeImg={setImageContent}
+        />
         <Button className='add-step' onClick={handleAddSteps}>
           순서 추가
         </Button>
@@ -315,20 +254,4 @@ const MainOptionContainer = styled.div`
     margin-top: 1.5rem;
     font-size: 1.2rem;
   }
-`;
-
-const StepContainer = styled.div`
-  margin: 20px;
-`;
-
-const CategoryOptionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-bottom: 30px;
-`;
-
-const IngredientContainer = styled.div`
-  display: flex;
-  align-items: center;
 `;
