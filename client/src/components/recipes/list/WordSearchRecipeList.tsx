@@ -25,6 +25,7 @@ import ScrollTopButton from '../../ui/button/ScrollTopButton';
 
 import RecipeCard from './RecipeCard';
 import { fetchWordSearchResult } from '../../../api/recipes';
+import FoundHeader from './FoundHeader';
 
 const WordSearchRecipeList: React.FC = () => {
   const [target, setTarget] = useState<HTMLDivElement | null>();
@@ -153,13 +154,7 @@ const WordSearchRecipeList: React.FC = () => {
         {filteredRecipes !== undefined && (
           <>
             {filteredRecipes.length > 0 && !isLoadingMore && (
-              <>
-                <h2>
-                  총 <HighLight>{recipeCount}</HighLight>
-                  건의 레시피를 찾았습니다!
-                </h2>
-                <hr />
-              </>
+              <FoundHeader recipeCount={recipeCount} />
             )}
             {filteredRecipes.length === 0 && !isLoadingRecipe && (
               <NoneFound>

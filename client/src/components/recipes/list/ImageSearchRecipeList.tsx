@@ -26,6 +26,7 @@ import {
 import ScrollTopButton from '../../ui/button/ScrollTopButton';
 
 import { fetchImageSearchResult } from '../../../api/recipes';
+import FoundHeader from './FoundHeader';
 
 type Props = {
   cardNum?: string[];
@@ -155,18 +156,7 @@ const ImageSearchRecipeList: React.FC<Props> = ({ option }) => {
         )}
         {filteredRecipes.length > 0 && !isLoadingMore && (
           <>
-            <FoundHeader>
-              <h2>
-                총 <HighLight>{recipeCount}</HighLight>
-                건의 레시피를 찾았습니다!
-              </h2>
-              <Button
-                className='submit'
-                onClick={() => navigate('/word-search')}
-              >
-                직접 검색으로 찾기
-              </Button>
-            </FoundHeader>
+            <FoundHeader recipeCount={recipeCount} />
             <hr />
           </>
         )}
@@ -205,11 +195,6 @@ const ImageSearchRecipeList: React.FC<Props> = ({ option }) => {
 };
 
 export default ImageSearchRecipeList;
-
-const FoundHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 
 const LoadingContainer = styled.div`
   display: flex;

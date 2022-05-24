@@ -1,9 +1,6 @@
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
-/* 개발용 url */
-// const BASE_URL = 'http://localhost:3000/api';
-
 export const sendIngredientPhoto = (formData: FormData) => {
   return axios.post(`${process.env.REACT_APP_BASE_URL}/`, formData);
 };

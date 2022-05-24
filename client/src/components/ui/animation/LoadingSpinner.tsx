@@ -1,15 +1,23 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import LottieLoader from 'react-lottie-loader';
 import styled from 'styled-components';
 
 import Lottie from '../../../assets/lotties/walking-broccoli.json';
 
 const LoadingSpinner: React.FC = ({ children }) => {
+  const portal = document.getElementById('loading-spinner');
+
   return (
-    <LoadingSpinnerWapper>
-      {children}
-      <LottieLoader animationData={Lottie} />
-    </LoadingSpinnerWapper>
+    <>
+      {ReactDOM.createPortal(
+        <LoadingSpinnerWapper>
+          {children}
+          <LottieLoader animationData={Lottie} />
+        </LoadingSpinnerWapper>,
+        portal as Element
+      )}
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ type ModalProps = {
   className?: string;
 };
 
-const portal = document.getElementById('overlay');
+const portal = document.getElementById('modal-overlay');
 
 const Modal: React.FC<ModalProps> = ({
   children,
