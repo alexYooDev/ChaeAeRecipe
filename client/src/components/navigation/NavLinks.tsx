@@ -19,6 +19,23 @@ const NavLinks: React.FC<Props> = ({ className }) => {
     setAuthenticated(false);
   };
 
+  const privateLink = authenticated ? (
+    <>
+      <li>
+        <NavLink to='/create-recipe'>레시피 작성</NavLink>
+      </li>
+      <li>
+        <button onClick={handleLogout}>로그아웃</button>
+      </li>
+    </>
+  ) : (
+    <>
+      <li>
+        <NavLink to='/login'>로그인</NavLink>
+      </li>
+    </>
+  );
+
   return (
     <LinkItems className={className}>
       <li>
@@ -30,22 +47,7 @@ const NavLinks: React.FC<Props> = ({ className }) => {
       <li>
         <NavLink to='/guide'>채식 가이드</NavLink>
       </li>
-      {authenticated ? (
-        <>
-          <li>
-            <NavLink to='/create-recipe'>레시피 작성</NavLink>
-          </li>
-          <li>
-            <button onClick={handleLogout}>로그아웃</button>
-          </li>
-        </>
-      ) : (
-        <>
-          <li>
-            <NavLink to='/login'>로그인</NavLink>
-          </li>
-        </>
-      )}
+      {privateLink}
     </LinkItems>
   );
 };
