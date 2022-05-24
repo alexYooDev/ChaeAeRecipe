@@ -4,27 +4,16 @@ import { useQuery } from 'react-query';
 import { useRecoilState, useResetRecoilState } from 'recoil';
 import { Navigate } from 'react-router-dom';
 
-import Input from '../../ui/input/Input';
-import {
-  METHOD_DATA,
-  OCC_DATA,
-  KIND_DATA,
-  SERVINGS_DATA,
-  TIME_DATA,
-} from '../../../assets/data/categoryData';
-import IngredientList from '../ingredients/IngredientTagList';
-import RecipeSteps from './RecipeSteps';
-
-import PhotoInput from '../../ui/input/PhotoInput';
 import Button from '../../ui/button/Button';
 import LoadingSpinner from '../../ui/animation/LoadingSpinner';
 import Modal from '../../ui/modal/Modal';
 
-import CategoryOption from '../../category/CategoryOption';
-import IconOption from '../../category/IconOption';
-
 import { sendUpdatedRecipe } from '../../../api/recipes';
 import { filterState, updateDataState } from '../../../store/store';
+import CookingStep from './CookingStep';
+import CategoryInput from './CategoryInput';
+import MainOptionHeader from './MainOptionHeader';
+import IngredientInput from './IngredientInput';
 
 const UpdateForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -102,13 +91,6 @@ const UpdateForm = () => {
     );
     setIsModalOpen(false);
     registerNewRecipe();
-    // if (data?.data.success === false) {
-    //   Swal.fire({
-    //     text: data?.data.message,
-    //     confirmButtonText: '확인',
-    //     confirmButtonColor: 'green',
-    //   });
-    // }
   };
 
   /* 레시피 작성 취소 */
@@ -134,11 +116,6 @@ const UpdateForm = () => {
       ...prev,
       prev.length ? Number(prev[prev.length - 1]) + 1 : 0,
     ]);
-    // setCookingStep({
-    //   ...cookingStep,
-    //   [Object.entries(cookingStep).filter((step) => step[1] !== '').length + 1]:
-    //     '',
-    // });
   };
 
   const handleCompleteRecipe = (e) => {
@@ -165,6 +142,9 @@ const UpdateForm = () => {
     setMessage('레시피 작성을 완료하셨나요?');
   };
 
+  const isCookingStepAdded =
+    updateData.cooking_step === '' ? 0 : updateData.step_number.length;
+
   useEffect(() => {
     setOption({
       ...option,
@@ -179,8 +159,7 @@ const UpdateForm = () => {
     setNewRecipe({
       ...newRecipe,
       recipe_name: updateData.recipe_name,
-      step_count:
-        updateData.cooking_step === '' ? 0 : updateData.step_number.length,
+      step_count: isCookingStepAdded,
     });
     setIngredientList(updateData.ingredients);
     setSeasoningList(updateData.sauce);
@@ -210,95 +189,28 @@ const UpdateForm = () => {
           <hr />
         </RecipeFormHeader>
         <MainOptionContainer>
-          <Input
-            type='text'
-            className='title'
+          <MainOptionHeader
+            onChangeTitle={handleChangeRecipeTitle}
             value={newRecipe.recipe_name}
-            placeholder='제목을 입력해주세요'
-            onChange={handleChangeRecipeTitle}
-          />
-          <PhotoInput
-            id='main_image'
-            className='main-image'
-            images={imageContent}
             onChangeImg={setImageContent}
-            placeholder='메인사진을 업로드 해주세요.'
+            imageContent={imageContent}
           />
-          <p>요리 종류</p>
-          <IconOption data={KIND_DATA} option={option.kind} />
-          <CategoryOptionContainer>
-            <CategoryOption
-              data={SERVINGS_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.serving}
-            >
-              인분:
-            </CategoryOption>
-            <CategoryOption
-              data={TIME_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.time}
-            >
-              시간:
-            </CategoryOption>
-            <CategoryOption
-              data={METHOD_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.method}
-            >
-              방법:
-            </CategoryOption>
-            <CategoryOption
-              data={OCC_DATA.slice(1)}
-              onChange={handleChangeOption}
-              option={option.occ}
-            >
-              상황:
-            </CategoryOption>
-          </CategoryOptionContainer>
+          <CategoryInput onChangeOption={handleChangeOption} option={option} />
         </MainOptionContainer>
-        <p>사용 재료</p>
-        <IngredientContainer>
-          <IngredientList
-            text='사용 재료'
-            list={ingredientList}
-            onChangeList={setIngredientList}
-          />
-        </IngredientContainer>
-        <p>사용 양념</p>
-        <IngredientContainer>
-          <IngredientList
-            text='사용 양념'
-            list={seasoningList}
-            onChangeList={setSeasoningList}
-          />
-        </IngredientContainer>
-        <StepContainer>
-          {stepNum.map((idx) => (
-            <div key={idx}>
-              <h3>
-                조리 단계 {Number(Object.keys(stepNum).splice(idx, 1)) + 1}
-              </h3>
-              <RecipeSteps
-                key={idx}
-                id={idx.toString()}
-                cookingStep={cookingStep}
-                onChangeStep={setCookingStep}
-                stepNum={stepNum}
-                onChangeNum={setStepNum}
-                imgContent={imageContent}
-                onChangeImg={setImageContent}
-              >
-                <PhotoInput
-                  id={`step${idx + 1}`}
-                  images={imageContent}
-                  onChangeImg={setImageContent}
-                  placeholder='단계별 사진을 업로드 해주세요.'
-                />
-              </RecipeSteps>
-            </div>
-          ))}
-        </StepContainer>
+        <IngredientInput
+          ingredientList={ingredientList}
+          seasoningList={seasoningList}
+          onChangeIngredient={setIngredientList}
+          onChangeSeansoning={setSeasoningList}
+        />
+        <CookingStep
+          stepNum={stepNum}
+          setStepNum={setStepNum}
+          cookingStep={cookingStep}
+          setCookingStep={setCookingStep}
+          imageContent={imageContent}
+          onChangeImg={setImageContent}
+        />
         <Button className='add-step' onClick={handleAddSteps}>
           순서 추가
         </Button>
@@ -357,25 +269,4 @@ const MainOptionContainer = styled.div`
     margin-top: 1.5rem;
     font-size: 1.2rem;
   }
-`;
-
-const StepContainer = styled.div`
-  margin: 20px;
-
-  @media (max-width: 490px) {
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const CategoryOptionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-bottom: 30px;
-`;
-
-const IngredientContainer = styled.div`
-  display: flex;
-  align-items: center;
 `;

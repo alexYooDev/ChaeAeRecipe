@@ -1,4 +1,9 @@
-import React, { MutableRefObject, useRef, ChangeEventHandler } from 'react';
+import React, {
+  Dispatch,
+  MutableRefObject,
+  useRef,
+  ChangeEventHandler,
+} from 'react';
 
 import _ from 'lodash';
 import styled from 'styled-components';
@@ -9,7 +14,7 @@ type Props = {
   placeholder?: string;
   onChangeImg?: any;
   className?: string;
-  images: { files: any; url: any };
+  imageContent: { files: any; url: any };
 };
 
 const PhotoInput: React.FC<Props> = ({
@@ -17,7 +22,7 @@ const PhotoInput: React.FC<Props> = ({
   style,
   className,
   placeholder,
-  images,
+  imageContent,
   onChangeImg,
 }) => {
   const imgUploadInput = useRef() as MutableRefObject<HTMLInputElement>;
@@ -35,10 +40,10 @@ const PhotoInput: React.FC<Props> = ({
 
     reader.onloadend = async () => {
       onChangeImg({
-        files: { ...images.files, [`${id}`]: uploadedImg },
-        url: { ...images.url, [`${id}`]: imgUrl },
+        files: { ...imageContent.files, [`${id}`]: uploadedImg },
+        url: { ...imageContent.url, [`${id}`]: imgUrl },
       });
-      _.uniqBy(images.files, id);
+      _.uniqBy(imageContent.files, id);
     };
     if (uploadedImg) {
       reader.readAsDataURL(uploadedImg);
@@ -53,8 +58,8 @@ const PhotoInput: React.FC<Props> = ({
         ref={previewBoxRef}
         onClick={handleSubmitImg}
       >
-        {images.url[`${id}`] ? (
-          <img alt='preview' src={images.url[`${id}`]} />
+        {imageContent.url[`${id}`] ? (
+          <img alt='preview' src={imageContent.url[`${id}`]} />
         ) : (
           <div>
             <span>{placeholder}</span>
