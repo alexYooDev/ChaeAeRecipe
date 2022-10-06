@@ -65,10 +65,10 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 | Name | Responsible For |
 | ------ | ------ |
 | Yoo, Hwanik | Team Leader/FE |
-| Chung, Jinmook | BE |
-| Lim, eunbi | BE |
-| Lee, boyeon | BE/DA |
-| Lee, yeongmin | AI |
+| Chung, Jinmook | BE Development |
+| Lim, eunbi | BE Development|
+| Lee, boyeon | BE Development/Data Analysis |
+| Lee, yeongmin | AI Development |
 <br/><br/>
 
 | 이름 | 담당 업무 |
