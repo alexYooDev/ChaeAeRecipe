@@ -122,7 +122,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
     - Among common food ingredients such as fish, vegetbles, fruits, nuts, and veggie sauce, Total of 70 classes were successfully analized and detected by our model<br/><br/> 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.<br/><br/> 
   - How did you transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
     - Our AI specialist took care of coding from the start, you can view his work in the file named 'swish_F03_annotation_form_transformer.py' <br/><br/> 직접 코드를 제작하여 변환 했습니다.<br/><br/> 
-    - Team8 > ai backup > master branch > dataset_practice_swish > swish_F03_annotation_form_transformer.py 참고
+    - Team8 > ai backup > master branch > dataset_practice_swish > swish_F03_annotation_form_transformer.py 참고<br/>
     - Education code for finalized version of AI model is contained in dateset_practice_swish directory, code is set in functioning order for your reference. <br/><br/>최종 모델 학습에 사용한 코드들은 dataset_practice_swish 폴더에 있습니다. 코드 동작 순서대로 정리해 두었으니 조금이라도 도움이 되었으면 합니다.<br/><br/> 
     - swish_F03_annotation_form_transformer.py 작동 후 roboflow 사이트에서 annotation 및 augmentation적용 한 후 다음 코드로 넘어갑니다.
     - 학습 완료한 모델을 시험해 볼 때 swish_70_classes_practice.py 파일을 사용하였습니다.
