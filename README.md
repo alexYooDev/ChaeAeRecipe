@@ -82,33 +82,33 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 
 **Responsibilities in Detail**
 
-1. Hwanik Yoo(유환익): Team leader/FE (팀장/프론트엔드 담당)
+1. Hwanik Yoo(유환익): Team leader/FE Development (팀장/프론트엔드 담당)
 
-- Managed development process (개발 일정 관리 : Notion, Discord Channel, Git wiki etc.) 
-- Took chare of the whole clint-side development, including Main page, Search Function, Data Visualization(메인 화면, 검색, 조회 기능 구현
-- Developed Login/Sign-up Functinality (로그인/회원가입 기능 구현)
-- created vegetarian recipe guide page (레시피 가이드 페이지 구현)
+- Managed development process<br/>(개발 일정 관리 : Notion, Discord Channel, Git wiki etc.) 
+- Took charge of the whole clint-side Implementation, including Main page, Search Function, Data Visualization<br/>(메인 화면, 검색, 조회 기능 구현
+- Implemented Login/Sign-up Functinality<br/>(로그인/회원가입 기능 구현)
+- created vegetarian recipe guide page<br/>(레시피 가이드 페이지 구현)
 
-2. 정진묵: 백엔드 담당
+2. Jinmook Chung(정진묵): BE Development (백엔드 담당)
 
-- 레시피 작성 페이지 구현
-- 로그인/로그아웃 페이지 구현
-- 개발환경 설정 및 배포
+- Implemented Create recipe API<br/>(레시피 작성 페이지 구현)
+- Implemented Login/Sign-up API<br/>(로그인/로그아웃 페이지 구현)
+- Set development environment && Deployed app online<br/>(개발환경 설정 및 배포)
 
-3. 임은비: 백엔드 담당
-- DB 설계 및 api 명세 작성
-- 재료 검색 페이지 구현
-- 레시피 검색 페이지 구현
+3. Eunbi Lim(임은비): BE Development (백엔드 담당)
+- DB architect && Documentized API (DB 설계 및 api 명세 작성)
+- Implemented Ingredient Search API (재료 검색 페이지 구현)
+- Implemented Image Search API (레시피 검색 페이지 구현)
 
-4. 이보연: 백엔드 담당
-- DB 설계 및 api 명세 작성
-- 레시피 데이터 추출 및 전처리
-- 레시피 상세페이지 구현
+4. Boyeon Lee(이보연): BE Development (백엔드 담당)
+- DB architect && Documentized API (DB 설계 및 api 명세 작성)
+- Extracted recipe data from open source && proceessed data (레시피 데이터 추출 및 전처리)
+- Implemented Read recipe detail API 레시피 상세페이지 구현
 
-5. 이영민: 인공지능 담당
-- 서비스에 적합한 모델 선정
-- 학습 데이터 만들기 - 데이터 선정 + 크롤링/Annotation
-- 여러 종류의 AI 모델 학습 및 구현
+5. Yeongmin Lee(이영민): AI Development (인공지능 담당)
+- Seleceted suitable AI model type for the service (서비스에 적합한 모델 선정)
+- Created data for AI learning process, selected relevant data, and conducted data crowling for annotation(학습 데이터 만들기 && 데이터 선정 + 크롤링/Annotation)
+- Educated and implemented AI model (여러 종류의 AI 모델 학습 및 구현)
 
 
 ## 7. Version(버전)
@@ -121,18 +121,18 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
     - https://github.com/AlexeyAB/darknet
   - How many data classes can this model successfully detect? (총 몇개의 클래스를 탐지 가능한가요?)
     - Among common food ingredients such as fish, vegetbles, fruits, nuts, and veggie sauce, Total of 70 classes were successfully analized and detected by our model<br/><br/> 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.<br/><br/> 
-  - How did you transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
+  - How did we transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
     - Our AI specialist took care of coding from the start, you can view his work in the file named 'swish_F03_annotation_form_transformer.py' <br/><br/> 직접 코드를 제작하여 변환 했습니다.<br/><br/> 
     - Team8 > ai backup > master branch > dataset_practice_swish > swish_F03_annotation_form_transformer.py 참고<br/>
-    - Education code for finalized version of AI model is contained in dateset_practice_swish directory, code is set in functioning order for your reference. <br/><br/>최종 모델 학습에 사용한 코드들은 dataset_practice_swish 폴더에 있습니다. 코드 동작 순서대로 정리해 두었으니 조금이라도 도움이 되었으면 합니다.<br/><br/> 
-    - swish_F03_annotation_form_transformer.py 작동 후 roboflow 사이트에서 annotation 및 augmentation적용 한 후 다음 코드로 넘어갑니다.
-    - 학습 완료한 모델을 시험해 볼 때 swish_70_classes_practice.py 파일을 사용하였습니다.
-    - roboflow 사용 및 새로운 데이터 추가 없이 기존의 AIHub 데이터셋만 사용하시려면 dataset_practice 폴더 참고하시면 됩니다.
+    - Education code for finalized version of AI model is contained in dateset_practice_swish directory, code is set in functioning order for your reference. <br/><br/>최종 모델 학습에 사용한 코드들은 dataset_practice_swish 폴더에 있습니다. 코드 동작 순서대로 정리해 두었으니 조금이라도 도움이 되었으면 합니다.<br/><br/>
+    - swish_F03_annotation_form_transformer.py -> from roboflow website, apply annotation && augmentation then it moves on to the next line of code.<br/><br/>swish_F03_annotation_form_transformer.py 작동 후 roboflow 사이트에서 annotation 및 augmentation적용 한 후 다음 코드로 넘어갑니다.<br/><br/>
+    - We've utilized swish_70_classes_practice.py file to test our fully-learned AI model<br/><br/>학습 완료한 모델을 시험해 볼 때 swish_70_classes_practice.py 파일을 사용하였습니다.<br/><br/>
+    - Other than use of roboflow and augmentation of new dataroboflow, in case of using AIHub default data, please refer to data_practice directory <br/><br/>사용 및 새로운 데이터 추가 없이 기존의 AIHub 데이터셋만 사용하시려면 dataset_practice 폴더 참고하시면 됩니다.<br/><br/> 
     - https://kdt-gitlab.elice.io/ai_track/class_03/ai_project/team8/ai-backup
-  - AI 학습 데이터 annotation 및 augmentation 시킨 방법 : roboflow 사이트 이용
-  - 모델은 어디에서 학습시켰나요?
-    - google colab pro를 결재하여 학습을 진행하였습니다. 제공되는 하드웨어도 뛰어나고, 편의성도 좋아서 후회한 적 없습니다. 
+  - Our way of annotating and augmentating data for AI training<br/><br/> AI 학습 데이터 annotation 및 augmentation 시킨 방법 : roboflow 사이트 이용<br/><br/> 
+  - In which environment have we educated our model? (모델은 어디에서 학습시켰나요?)
+    - We purchase google colab pro version. we enjoyed its strong performance in training and developer-friendly UX. Especially we loved its compatibility with google drive.<br/></br>google colab pro를 결제하여 학습을 진행하였습니다. 제공되는 하드웨어도 뛰어나고, 편의성도 좋아서 후회한 적 없습니다. 
       특히 google drive와 연동이 가능할 수 있다는 점이 장점 중 하나입니다.
-  - 케찹, 칠리소스, 고추장 같은 소스류도 모델이 잘 구분을 하나요?
-    - 소스류의 경우 그릇 등에 담겨져 있으면 AI가 잘 학습하지 못해서, 대중적인 공산품 소스의 용기를 따로 크롤링하여 학습시켰습니다.
-    - ex) 케찹 : 오뚜기, Heinz,  청정원 케찹 등
+  - Does AI model great job on distinguishing sauce such as ketchup, chili, and pepper paste? (케찹, 칠리소스, 고추장 같은 소스류도 모델이 잘 구분을 하나요?)
+    - In case of sauce, our model showed poor performancewhen contained in a dish or a saucer, we used images of the manufactured products (소스류의 경우 그릇 등에 담겨져 있으면 AI가 잘 학습하지 못해서, 대중적인 공산품 소스의 용기를 따로 크롤링하여 학습시켰습니다.)
+    - ex) ketchup: Ottuki (Korean brand), Heinz, etc. <br/><br/> ex) 케찹 : 오뚜기, Heinz,  청정원 케찹 등
