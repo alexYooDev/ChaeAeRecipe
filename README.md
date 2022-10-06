@@ -39,29 +39,38 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 
 ## 3. About Major Functionality (서비스 주요 기능 설명)
 
-- 재료들의 사진을 찍어 올리면 인공지능 모델이 그 재료들이 무엇인지 판별하고 각 재료의 영양 성분과 관련 레시피를 추천해줍니다.
-- 재료의 검색을 통해 여러 재료를 입력했을 경우 최대한 많은 재료가 들어간 레시피 순으로 추천해줍니다.
-- 레시피 작성을 통해 나만의 레시피를 공유할 수 있습니다.
-- 채식 입문자들을 위한 가이드를 제공합니다.
+- Upon uploading an vegetable ingredients image, Darknet model analizes it and identifies ingredients name, nutrition info, and corresponding recipe list (재료들의 사진을 찍어 올리면 인공지능 모델이 그 재료들이 무엇인지 판별하고 각 재료의 영양 성분과 관련 레시피를 추천해줍니다.)
+- Upon search bar input, the result page shows recipes ordered by the maximum number of ingredients needed (재료의 검색을 통해 여러 재료를 입력했을 경우 최대한 많은 재료가 들어간 레시피 순으로 추천해줍니다.)
+- User can create and upload their own recipes (레시피 작성을 통해 나만의 레시피를 공유할 수 있습니다.)
+- Provides veggie diet guidance for novice vegetarians (채식 입문자들을 위한 가이드를 제공합니다.)
 
-## 4. 프로젝트 구성도
-  - 프로젝트 구조도
+## 4. Project Architecture (프로젝트 구성도)
+  - Project Structure (프로젝트 구조도)
   https://media.discordapp.net/attachments/936622280635740185/951901125815181362/2022-03-12_2.55.03.png
-  - 와이어프레임
+  - Rough Wire-Frame Sketch (와이어프레임)
   https://www.figma.com/file/sZVmbrwxm10F5J3Mge2oIq/%EC%9D%B4%EB%AF%B8%EC%A7%80-8%ED%8C%80?node-id=0%3A1
-  - 스토리보드
+  - Story board (스토리보드)
   https://media.discordapp.net/attachments/936622280635740185/951902631306092624/2022-03-12_3.00.55.png
   - DB diagram
   https://dbdiagram.io/d/620f92de485e433543d8b447
-  - 레시피 데이터
+  - Open Recipe data for AI supervised learning(레시피 데이터)
   https://kadx.co.kr/product/detail/0c5ec800-4fc2-11eb-8b6e-e776ccea3964
 
-## 5. 사용 기술 스택
+## 5. Tech Stack(사용 기술 스택)
 - AI : Darknet, OpenCV
-- 백엔드 : Flask, Flask-SQLAlchemy, Docker, Mysql, Nginx
-- 프론트엔드 : TypeScript, ReactQuery, Recoil, Styled-Components, Axios
+- Server : Flask, Flask-SQLAlchemy, Docker, Mysql, Nginx
+- Client : TypeScript, React Query, Recoil, Styled-Components, Axios
 
-## 6. 프로젝트 팀원 역할 분담
+## 6. Team Responsibilities (프로젝트 팀원 역할 분담)
+| Name | Responsible For |
+| ------ | ------ |
+| Yoo, Hwanik | Team Leader/FE |
+| Chung, Jinmook | BE |
+| Lim, eunbi | BE |
+| Lee, boyeon | BE/DA |
+| Lee, yeongmin | AI |
+<br/><br/>
+
 | 이름 | 담당 업무 |
 | ------ | ------ |
 | 유환익 | 팀장/프론트엔드 개발 |
@@ -70,14 +79,14 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 | 이보연 | 백엔드 개발/데이터 |
 | 이영민 | 인공지능 개발 |
 
-**멤버별 responsibility**
+**Responsibilities in Detail**
 
-1. 유환익: 팀장/프론트엔드 담당
+1. Hwanik Yoo(유환익): Team leader/FE (팀장/프론트엔드 담당)
 
-- 개발 일정 관리
-- 메인 화면, 검색, 조회 기능 구현
-- 로그인/회원가입 기능 구현
-- 레시피 가이드 페이지 구현
+- Managed development process (개발 일정 관리 : Notion, Discord Channel, Git wiki etc.) 
+- Took chare of the whole clint-side development, including Main page, Search Function, Data Visualization(메인 화면, 검색, 조회 기능 구현
+- Developed Login/Sign-up Functinality (로그인/회원가입 기능 구현)
+- created vegetarian recipe guide page (레시피 가이드 페이지 구현)
 
 2. 정진묵: 백엔드 담당
 
@@ -101,20 +110,20 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 - 여러 종류의 AI 모델 학습 및 구현
 
 
-## 7. 버전
+## 7. Version(버전)
   - 1.0.0
 
 ## 8. FAQ
   ### AI
-  - 어떤 AI 모델을 사용하였나요?
-    - YOLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다.
+  - Which AI model was used in this project? (어떤 AI 모델을 사용하였나요?)
+    - Among the YOLO model, we chose yolo4 which is actively in use among the developer communities <br/><br/>OLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다.
     - https://github.com/AlexeyAB/darknet
-  - 총 몇개의 클래스를 탐지 가능한가요?
-    - 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.
-  - AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?
-    - 직접 코드를 제작하여 변환 했습니다
+  - How many data classes can this model successfully detect? (총 몇개의 클래스를 탐지 가능한가요?)
+    - Among common food ingredients such as fish, vegetbles, fruits, nuts, and veggie sauce, Total of 70 classes were successfully analized and detected by our model<br/><br/> 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.
+  - How did you transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
+    - Our AI specialist took care of coding from the start, you can view his work in the file named 'swish_F03_annotation_form_transformer.py' <br/><br/>직접 코드를 제작하여 변환 했습니다.
     - Team8 > ai backup > master branch > dataset_practice_swish > swish_F03_annotation_form_transformer.py 참고
-    - 최종 모델 학습에 사용한 코드들은 dataset_practice_swish 폴더에 있습니다. 코드 동작 순서대로 정리해 두었으니 조금이라도 도움이 되었으면 합니다.
+    - Education code for finalized version of AI model is contained in dateset_practice_swish directory, code is set in functioning order for your reference. <br/><br/> 최종 모델 학습에 사용한 코드들은 dataset_practice_swish 폴더에 있습니다. 코드 동작 순서대로 정리해 두었으니 조금이라도 도움이 되었으면 합니다.
     - swish_F03_annotation_form_transformer.py 작동 후 roboflow 사이트에서 annotation 및 augmentation적용 한 후 다음 코드로 넘어갑니다.
     - 학습 완료한 모델을 시험해 볼 때 swish_70_classes_practice.py 파일을 사용하였습니다.
     - roboflow 사용 및 새로운 데이터 추가 없이 기존의 AIHub 데이터셋만 사용하시려면 dataset_practice 폴더 참고하시면 됩니다.
