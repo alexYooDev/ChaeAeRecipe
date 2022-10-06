@@ -1,16 +1,22 @@
-# 채愛레시피
-- 채식 입문자들을 위해, 재료 사진 한장을 인공지능 모델로 분석하여 맛있는 채식 레시피를 제공합니다.
+# Chae_ae_recipe (채愛레시피)
+- This app provides vegetarian cuisin recipes for the people trying to dabble in vegetarina diet, as Darknet(Image Procssing AI model) analizes uploaded food ingredient image.
+채식 입문자들을 위해, 재료 사진 한장을 인공지능 모델로 분석하여 맛있는 채식 레시피를 제공합니다.
 
-[채식주의자들의 레시피 커뮤니티: 채애레시피 링크](https://elice-kdt-ai-3rd-team08.elicecoding.com/)
+[Get Green - Chae_ae_recipe: Link](https://elice-kdt-ai-3rd-team08.elicecoding.com/)
 <br>
-[팀 노션 페이지](https://www.notion.so/8-Wiki-4958a75d092d4898b1ec5ccb4f16ecd4)
+[Team Communication Channel](https://www.notion.so/8-Wiki-4958a75d092d4898b1ec5ccb4f16ecd4)
 
-## 프로젝트 구성 안내
+## Project Information (프로젝트 구성 안내)
 
-## 1. 프로젝트 소개
+## 1. Project Introduction (프로젝트 소개)
 
+The aim of this project is to provide people who are interested and trying to dabble in vegetarin diet.
 현재 채식을 하고 있거나 채식에 관심은 있지만 시도해본 적 없는 채식 입문자들을 위해 채식 레시피를 제공하는 서비스입니다. 
-먹고 싶은 재료들의 사진을 찍어 올리면 인공지능이 그 재료들이 뭔지 판별하고 영양성분과 레시피를 추천해줍니다. 
+
+Upon uploading one image of food ingredients of users' choice, we provide each ingredient's nutrition information and corresponding recipes after the Darknet model analysis process.
+먹고 싶은 재료들의 사진을 찍어 올리면 인공지능이 그 재료들이 뭔지 판별하고 영양성분과 레시피를 추천해줍니다.
+
+To make things simple, user can also search with words of their choice. Our service targets the vegetarian quick-starter to provide them with vegetarian recipes with the closest relevance.
 보다 쉬운 검색을 통해 레시피를 검색할 수도 있습니다. 저희 서비스는 채식 입문자들을 타겟층으로 선정해 채식 가이드도 제공하고 있습니다.
 
 ## 2. 프로젝트 기획 의도
