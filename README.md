@@ -85,7 +85,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 1. Hwanik Yoo(유환익): Team leader/FE Development (팀장/프론트엔드 담당)
 
 - Managed development process<br/>(개발 일정 관리 : Notion, Discord Channel, Git wiki etc.) 
-- Took charge of the whole clint-side Implementation, including Main page, Search Function, Data Visualization<br/>(메인 화면, 검색, 조회 기능 구현
+- Took charge of the whole clint-side Implementation, including Main page, Search Function, Data Visualization<br/>(메인 화면, 검색, 조회 기능 구현)
 - Implemented Login/Sign-up Functinality<br/>(로그인/회원가입 기능 구현)
 - created vegetarian recipe guide page<br/>(레시피 가이드 페이지 구현)
 
