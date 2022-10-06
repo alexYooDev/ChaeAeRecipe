@@ -117,7 +117,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 ## 8. FAQ
   ### AI
   - Which AI model was used in this project? (어떤 AI 모델을 사용하였나요?)
-    - Among the YOLO model, we chose yolo4 which is actively in use among the developer communities <br/><br/>OLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다. [https://github.com/AlexeyAB/darknet]</br>
+    - Among the YOLO model, we chose yolo4 which is actively in use among the developer communities <br/><br/> YOLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다. [https://github.com/AlexeyAB/darknet]</br>
   - How many data classes can this model successfully detect? (총 몇개의 클래스를 탐지 가능한가요?)
     - Among common food ingredients such as fish, vegetbles, fruits, nuts, and veggie sauce, Total of 70 classes were successfully analized and detected by our model<br/><br/> 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.<br/><br/> 
   - How did we transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
