@@ -70,7 +70,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 | Lee, boyeon | BE Development/Data Analysis |
 | Lee, yeongmin | AI Development |
 
-<br/><br/>
+<br/>
 
 | 이름 | 담당 업무 |
 | ------ | ------ |
