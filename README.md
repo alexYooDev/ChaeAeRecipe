@@ -111,7 +111,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 - Educated and implemented AI model (여러 종류의 AI 모델 학습 및 구현)
 
 
-## 7. Version(버전)
+## 7. Version (버전)
   - 1.0.0
 
 ## 8. FAQ
