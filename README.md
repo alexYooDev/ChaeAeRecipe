@@ -2,7 +2,7 @@
 - This app provides vegetarian cuisine recipes for the people trying to dabble into vegetarina diet, as Darknet(Image Procssing AI model) analyzes uploaded food ingredient image. <br/><br/>
 채식 입문자들을 위해, 재료 사진 한장을 인공지능 모델로 분석하여 맛있는 채식 레시피를 제공합니다.
 
-[Get Green - Chae_ae_recipe: Link](https://elice-kdt-ai-3rd-team08.elicecoding.com/)
+[Get Yourself Green - Chae_ae_recipe: Link](https://elice-kdt-ai-3rd-team08.elicecoding.com/)
 <br>
 [Team Communication Channel](https://www.notion.so/8-Wiki-4958a75d092d4898b1ec5ccb4f16ecd4)
 
