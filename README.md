@@ -1,5 +1,5 @@
 # Chae_ae_recipe (채愛레시피)
-- This app provides vegetarian cuisin recipes for the people trying to dabble in vegetarina diet, as Darknet(Image Procssing AI model) analizes uploaded food ingredient image. <br/><br/>
+- This app provides vegetarian cuisine recipes for the people trying to dabble into vegetarina diet, as Darknet(Image Procssing AI model) analyzes uploaded food ingredient image. <br/><br/>
 채식 입문자들을 위해, 재료 사진 한장을 인공지능 모델로 분석하여 맛있는 채식 레시피를 제공합니다.
 
 [Get Green - Chae_ae_recipe: Link](https://elice-kdt-ai-3rd-team08.elicecoding.com/)
@@ -10,7 +10,7 @@
 
 ## 1. Project Introduction (프로젝트 소개)
 
-The aim of this project is to provide people who are interested and trying to dabble in vegetarin diet.<br/><br/>
+The aim of this project is to provide people who are interested and trying to dabble in vegetarin diet with Korea's popular vegetarian recipes.<br/><br/>
 현재 채식을 하고 있거나 채식에 관심은 있지만 시도해본 적 없는 채식 입문자들을 위해 채식 레시피를 제공하는 서비스입니다.<br/><br/> 
 
 Upon uploading one image of food ingredients of users' choice, we provide each ingredient's nutrition information and corresponding recipes after the Darknet model analysis process.<br/><br/>
