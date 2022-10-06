@@ -66,9 +66,9 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 | ------ | ------ |
 | Yoo, Hwanik | Team Leader/FE Development|
 | Chung, Jinmook | BE Development |
-| Lim, eunbi | BE Development|
-| Lee, boyeon | BE Development/Data Analysis |
-| Lee, yeongmin | AI Development |
+| Lim, Eunbi | BE Development|
+| Lee, Boyeon | BE Development/Data Analysis |
+| Lee, Yeongmin | AI Development |
 
 <br/>
 
