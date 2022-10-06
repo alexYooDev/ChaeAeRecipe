@@ -11,19 +11,33 @@
 ## 1. Project Introduction (프로젝트 소개)
 
 The aim of this project is to provide people who are interested and trying to dabble in vegetarin diet.<br/><br/>
-현재 채식을 하고 있거나 채식에 관심은 있지만 시도해본 적 없는 채식 입문자들을 위해 채식 레시피를 제공하는 서비스입니다. 
+현재 채식을 하고 있거나 채식에 관심은 있지만 시도해본 적 없는 채식 입문자들을 위해 채식 레시피를 제공하는 서비스입니다.<br/><br/> 
 
 Upon uploading one image of food ingredients of users' choice, we provide each ingredient's nutrition information and corresponding recipes after the Darknet model analysis process.<br/><br/>
-먹고 싶은 재료들의 사진을 찍어 올리면 인공지능이 그 재료들이 뭔지 판별하고 영양성분과 레시피를 추천해줍니다.
+먹고 싶은 재료들의 사진을 찍어 올리면 인공지능이 그 재료들이 뭔지 판별하고 영양성분과 레시피를 추천해줍니다.<br/><br/> 
 
 To make things even simpler, user can also search with words of their choice. Our service targets the vegetarian quick-starter to provide them with vegetarian recipes with the closest relevance.<br/><br/>
-보다 쉬운 검색을 통해 레시피를 검색할 수도 있습니다. 저희 서비스는 채식 입문자들을 타겟층으로 선정해 채식 가이드도 제공하고 있습니다.
+보다 쉬운 검색을 통해 레시피를 검색할 수도 있습니다. 저희 서비스는 채식 입문자들을 타겟층으로 선정해 채식 가이드도 제공하고 있습니다.<br/><br/> 
 
-## 2. 프로젝트 기획 의도
+## 2. Intent of the Project (프로젝트 기획 의도)
 
-채식 인구는 증가하고 있는데 아직도 한국에서 채식을 하기란 힘듭니다. 외식을 하거나 배달을 시킬 때 채식 메뉴는 거의 없습니다. 설문조사에서 채식주의자들은 약 70%가 집에서 음식을 만들어 먹는다고 합니다. 찾아본 결과 채식 레시피만을 다루는 사이트는 없었습니다. 건강을 생각하는 사람들이 많아지면서 비건은 아니지만 간헐적으로 채식을 하는 플렉시테리언이 증가하고 있습니다. 현재 채식을 하고 있는 사람, 간헐적 채식을 하고 있어 일주일에 하루나 이틀, 한 끼에서 두 끼 정도 채식을 하는 사람, 채식에 관심은 있지만 시도해보지 못한 사람들을 위해 쉽게 레시피를 추천해주는 서비스를 만들고 싶었습니다.
+Despite the recent growth of vegetarian population in Korean society, it is hard for most of them to find a place eat or proper guidance to have vegetarian food.<br/>
+Vegetarian options are rare to come by when they go for quick eat-out or food delivery.<br/><br/>
+채식 인구는 증가하고 있는데 아직도 한국에서 채식을 하기란 힘듭니다. 외식을 하거나 배달을 시킬 때 채식 메뉴는 거의 없습니다.<br/><br/> 
 
-## 3. 서비스 주요 기능 설명
+In the recent studies, vegetarians prefer to cook their own food home.<br/><br/>
+설문조사에서 채식주의자들은 약 70%가 집에서 음식을 만들어 먹는다고 합니다. <br/><br/> 
+
+Upon multiple researches conducted by our team, there currently were no web vegetarian recipe provider to be found in Korean domain<br/><br/>
+찾아본 결과 채식 레시피만을 다루는 사이트는 없었습니다.<br/><br/> 
+
+In the rise of people taking health diet serious, the number of 'Flexitarian', who spontaneously practice vegetarian diet are increasing as well.<br/><br/>
+건강을 생각하는 사람들이 많아지면서 비건은 아니지만 간헐적으로 채식을 하는 플렉시테리언이 증가하고 있습니다.<br/><br/> 
+
+We wanted to make a web app that makes things a lot easier for current vegetarians, flexitarins, and who are intested in veggie diet but haven't tried yet.<br/><br/>
+현재 채식을 하고 있는 사람, 간헐적 채식을 하고 있어 일주일에 하루나 이틀, 한 끼에서 두 끼 정도 채식을 하는 사람, 채식에 관심은 있지만 시도해보지 못한 사람들을 위해 쉽게 레시피를 추천해주는 서비스를 만들고 싶었습니다.<br/><br/>
+
+## 3. About Major Functionality (서비스 주요 기능 설명)
 
 - 재료들의 사진을 찍어 올리면 인공지능 모델이 그 재료들이 무엇인지 판별하고 각 재료의 영양 성분과 관련 레시피를 추천해줍니다.
 - 재료의 검색을 통해 여러 재료를 입력했을 경우 최대한 많은 재료가 들어간 레시피 순으로 추천해줍니다.
