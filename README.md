@@ -39,10 +39,10 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 
 ## 3. About Major Functionality (서비스 주요 기능 설명)
 
-- Upon uploading an vegetable ingredients image, Darknet model analizes it and identifies ingredients name, nutrition info, and corresponding recipe list (재료들의 사진을 찍어 올리면 인공지능 모델이 그 재료들이 무엇인지 판별하고 각 재료의 영양 성분과 관련 레시피를 추천해줍니다.)
-- Upon search bar input, the result page shows recipes ordered by the maximum number of ingredients needed (재료의 검색을 통해 여러 재료를 입력했을 경우 최대한 많은 재료가 들어간 레시피 순으로 추천해줍니다.)
-- User can create and upload their own recipes (레시피 작성을 통해 나만의 레시피를 공유할 수 있습니다.)
-- Provides veggie diet guidance for novice vegetarians (채식 입문자들을 위한 가이드를 제공합니다.)
+- Upon uploading an vegetable ingredients image, Darknet model analizes it and identifies ingredients name, nutrition info, and corresponding recipe list <br/>(재료들의 사진을 찍어 올리면 인공지능 모델이 그 재료들이 무엇인지 판별하고 각 재료의 영양 성분과 관련 레시피를 추천해줍니다.)
+- Upon search bar input, the result page shows recipes ordered by the maximum number of ingredients needed <br/>(재료의 검색을 통해 여러 재료를 입력했을 경우 최대한 많은 재료가 들어간 레시피 순으로 추천해줍니다.)
+- User can create and upload their own recipes <br/>(레시피 작성을 통해 나만의 레시피를 공유할 수 있습니다.)
+- Provides veggie diet guidance for novice vegetarians <br/>(채식 입문자들을 위한 가이드를 제공합니다.)
 
 ## 4. Project Architecture (프로젝트 구성도)
   - Project Structure (프로젝트 구조도)
@@ -53,7 +53,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
   https://media.discordapp.net/attachments/936622280635740185/951902631306092624/2022-03-12_3.00.55.png
   - DB diagram
   https://dbdiagram.io/d/620f92de485e433543d8b447
-  - Open Recipe data for AI supervised learning(레시피 데이터)
+  - Open Recipe data for AI supervised learning (레시피 데이터)
   https://kadx.co.kr/product/detail/0c5ec800-4fc2-11eb-8b6e-e776ccea3964
 
 ## 5. Tech Stack(사용 기술 스택)
