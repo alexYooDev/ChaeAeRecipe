@@ -64,11 +64,12 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 ## 6. Team Responsibilities (프로젝트 팀원 역할 분담)
 | Name | Responsible For |
 | ------ | ------ |
-| Yoo, Hwanik | Team Leader/FE |
+| Yoo, Hwanik | Team Leader/FE Development|
 | Chung, Jinmook | BE Development |
 | Lim, eunbi | BE Development|
 | Lee, boyeon | BE Development/Data Analysis |
 | Lee, yeongmin | AI Development |
+
 <br/><br/>
 
 | 이름 | 담당 업무 |
