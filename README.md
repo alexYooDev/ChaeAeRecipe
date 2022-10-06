@@ -117,8 +117,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
 ## 8. FAQ
   ### AI
   - Which AI model was used in this project? (어떤 AI 모델을 사용하였나요?)
-    - Among the YOLO model, we chose yolo4 which is actively in use among the developer communities <br/><br/>OLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다.
-    - https://github.com/AlexeyAB/darknet
+    - Among the YOLO model, we chose yolo4 which is actively in use among the developer communities <br/><br/>OLO 계열 중 활발하게 사용되어 온 yolov4 계열을 사용했습니다. [https://github.com/AlexeyAB/darknet]</br>
   - How many data classes can this model successfully detect? (총 몇개의 클래스를 탐지 가능한가요?)
     - Among common food ingredients such as fish, vegetbles, fruits, nuts, and veggie sauce, Total of 70 classes were successfully analized and detected by our model<br/><br/> 대중적인 생선, 야채, 과일, 견과류, 소스류 총 70종을 학습시켰습니다.<br/><br/> 
   - How did we transform AIHub(Korean AI data repository) default annotation format into your teams taste? (AIHub의 커스텀 annotation 형식을 어떻게 yolo darknet 형식으로 변환 했나요?)
@@ -132,7 +131,7 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
   - Our way of annotating and augmentating data for AI training<br/><br/> AI 학습 데이터 annotation 및 augmentation 시킨 방법 : roboflow 사이트 이용<br/><br/> 
   - In which environment have we educated our model? (모델은 어디에서 학습시켰나요?)
     - We purchase google colab pro version. we enjoyed its strong performance in training and developer-friendly UX. Especially we loved its compatibility with google drive.<br/></br>google colab pro를 결제하여 학습을 진행하였습니다. 제공되는 하드웨어도 뛰어나고, 편의성도 좋아서 후회한 적 없습니다. 
-      특히 google drive와 연동이 가능할 수 있다는 점이 장점 중 하나입니다.
+      특히 google drive와 연동이 가능할 수 있다는 점이 장점 중 하나입니다.<br/>
   - Does AI model great job on distinguishing sauce such as ketchup, chili, and pepper paste? (케찹, 칠리소스, 고추장 같은 소스류도 모델이 잘 구분을 하나요?)
-    - In case of sauce, our model showed poor performancewhen contained in a dish or a saucer, we used images of the manufactured products<br/>소스류의 경우 그릇 등에 담겨져 있으면 AI가 잘 학습하지 못해서, 대중적인 공산품 소스의 용기를 따로 크롤링하여 학습시켰습니다.)
+    - In case of sauce, our model showed poor performancewhen contained in a dish or a saucer, we used images of the manufactured products<br/>소스류의 경우 그릇 등에 담겨져 있으면 AI가 잘 학습하지 못해서, 대중적인 공산품 소스의 용기를 따로 크롤링하여 학습시켰습니다.<br/>
     - ex) ketchup: Ottuki (Korean brand), Heinz, etc. <br/><br/> ex) 케찹 : 오뚜기, Heinz,  청정원 케찹 등
