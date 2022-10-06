@@ -134,4 +134,4 @@ We wanted to make a web app that makes things a lot easier for current vegetaria
       특히 google drive와 연동이 가능할 수 있다는 점이 장점 중 하나입니다.<br/><br/>
   - Does AI model great job on distinguishing sauce such as ketchup, chili, and pepper paste? (케찹, 칠리소스, 고추장 같은 소스류도 모델이 잘 구분을 하나요?)
     - In case of sauce, our model showed poor performancewhen contained in a dish or a saucer, we used images of the manufactured products<br/>소스류의 경우 그릇 등에 담겨져 있으면 AI가 잘 학습하지 못해서, 대중적인 공산품 소스의 용기를 따로 크롤링하여 학습시켰습니다.<br/>
-    - ex) ketchup: Ottuki (Korean brand), Heinz, etc. <br/><br/> ex) 케찹 : 오뚜기, Heinz,  청정원 케찹 등
+    - ex) ketchup: Ottugi (Korean sause brand), Heinz, etc. <br/><br/> ex) 케찹 : 오뚜기, Heinz,  청정원 케찹 등
